@@ -12,14 +12,13 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.polymertemplate.Id;
-import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.shared.Registration;
-import com.vaadin.flow.templatemodel.TemplateModel;
 import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.template.Id;
 
 /**
  * @author Matthias Lottmann
@@ -28,7 +27,7 @@ import java.util.List;
  */
 @Tag("v-stepper")
 @JsModule("./v-stepper.js")
-public class VStepper extends PolymerTemplate<TemplateModel> implements HasSize, HasStyle {
+public class VStepper extends LitTemplate implements HasSize, HasStyle {
 
   private final List<Step> steps;
   private Step currentStep;

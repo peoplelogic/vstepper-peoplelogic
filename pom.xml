@@ -5,12 +5,12 @@
 
     <groupId>com.mlottmann.VStepper</groupId>
     <artifactId>VStepper</artifactId>
-    <version>1.0.9</version>
+    <version>1.1.0-SNAPSHOT</version>
     <name>VStepper</name>
 
     <properties>
-        <vaadin.version>14.1.3</vaadin.version>
-        <lombok.version>1.18.10</lombok.version>
+        <vaadin.version>24.2.2</vaadin.version>
+        <lombok.version>1.18.30</lombok.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -19,7 +19,7 @@
 
         <drivers.dir>${project.basedir}/drivers</drivers.dir>
 
-        <jetty.version>9.4.15.v20190215</jetty.version>
+        <jetty.version>11.0.18</jetty.version>
     </properties>
     <organization>
         <name>Vaadin Visitor</name>
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-component-demo-helpers</artifactId>
-            <version>2.1.6</version>
+            <version>9.1.7</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -138,7 +138,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <nodeVersion>v12.13.0</nodeVersion>
+                    <nodeVersion>v21.1.0</nodeVersion>
                 </configuration>
             </plugin>
         </plugins>
