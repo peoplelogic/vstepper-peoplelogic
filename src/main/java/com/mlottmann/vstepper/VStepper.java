@@ -9,6 +9,7 @@ import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -27,6 +28,7 @@ import com.vaadin.flow.component.template.Id;
  */
 @Tag("v-stepper")
 @JsModule("./v-stepper.js")
+@CssImport("./styles/stepper-styles.css")
 public class VStepper extends LitTemplate implements HasSize, HasStyle {
 
   private final List<Step> steps;
