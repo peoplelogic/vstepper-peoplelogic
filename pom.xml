@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mlottmann.VStepper</groupId>
+    <groupId>org.aksw.thirdparty.com.mlottmann.VStepper</groupId>
     <artifactId>VStepper</artifactId>
     <version>1.1.0-SNAPSHOT</version>
     <name>VStepper</name>
@@ -391,4 +391,19 @@
             </build>
         </profile>
     </profiles>
+    
+	<distributionManagement>
+		<repository>
+			<id>maven.aksw.internal</id>
+			<name>AKSW Release Repository</name>
+			<url>https://maven.aksw.org/repository/internal/</url>
+		</repository>
+		<snapshotRepository>
+			<id>maven.aksw.snapshots</id>
+			<name>AKSW Snapshot Repository</name>
+			<url>https://maven.aksw.org/repository/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+    
 </project>
