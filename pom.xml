@@ -178,6 +178,72 @@
     </build>
 
     <profiles>
+		<profile>
+			<id>aksw-release</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+	        <distributionManagement>
+		        <repository>
+			        <id>ossrh</id>
+			        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		        </repository>
+		        <snapshotRepository>
+			        <id>maven.aksw.snapshots</id>
+			        <name>AKSW Snapshot Repository</name>
+			        <url>https://maven.aksw.org/archiva/repository/snapshots</url>
+		        </snapshotRepository>
+	        </distributionManagement>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.amashchenko.maven.plugin</groupId>
+						<artifactId>gitflow-maven-plugin</artifactId>
+						<version>1.9.0</version>
+						<configuration>
+							<gitFlowConfig>
+								<versionTagPrefix>v</versionTagPrefix>
+								<developmentBranch>v24-aksw-dev</developmentBranch>
+								<productionBranch>v24-aksw-master</productionBranch>
+							</gitFlowConfig>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<configuration>
+									<keyname>AKSW</keyname>
+									<passphraseServerId>${gpg.keyname}</passphraseServerId>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.7.0</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
         <profile>
             <id>directory</id>
             <build>
