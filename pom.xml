@@ -207,7 +207,7 @@
 							<gitFlowConfig>
 								<versionTagPrefix>v</versionTagPrefix>
 								<developmentBranch>v24-aksw-dev</developmentBranch>
-								<productionBranch>v24-aksw-master</productionBranch>
+								<productionBranch>v24-aksw-main</productionBranch>
 							</gitFlowConfig>
 						</configuration>
 					</plugin>
