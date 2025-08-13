@@ -18,7 +18,7 @@ import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.textfield.TextField;
@@ -190,7 +190,7 @@ public class View extends DemoView {
   }
 
   private Div createRow(String caption, Component input) {
-    Label title = new Label(caption);
+    Span title = new Span(caption);
     Div row = new Div(title, input);
     row.addClassName("row");
     return row;
@@ -300,7 +300,7 @@ public class View extends DemoView {
     // source-example-heading: Simple Stepper
     VStepper stepper = new VStepper();
     stepper.setHeight("250px");
-    stepper.addStep(new Label("Step 1 Content"));
+    stepper.addStep(new Span("Step 1 Content"));
     stepper.addStep(new TextField("Step 2 Content"));
     stepper.addStep(new Checkbox("Step 3 Content"));
     stepper.addFinishListener(buttonClickEvent ->
@@ -314,7 +314,7 @@ public class View extends DemoView {
     // source-example-heading: Header Captions
     VStepper stepper = new VStepper();
     stepper.setHeight("250px");
-    stepper.addStep("Step 1", new Label("Step 1 Content"));
+    stepper.addStep("Step 1", new Span("Step 1 Content"));
     stepper.addStep("Step 2", new TextField("Step 2 Content"));
     stepper.addStep("Step 3", new Checkbox("Step 3 Content"));
     stepper.addFinishListener(buttonClickEvent ->
@@ -328,7 +328,7 @@ public class View extends DemoView {
     // source-example-heading: Button Listeners
     VStepper stepper = new VStepper();
     stepper.setHeight("250px");
-    stepper.addStep(new Label("Step 1 Content"));
+    stepper.addStep(new Span("Step 1 Content"));
     stepper.addStep(new TextField("Step 2 Content"));
     stepper.addStep(new Checkbox("Step 3 Content"));
     stepper.setCancelVisible(true);
@@ -348,9 +348,9 @@ public class View extends DemoView {
   // source-example-heading: Custom Headers
   private void customHeadersDemo() {
     VStepper stepper = new VStepper();
-    stepper.addStep(new CustomHeader("Step 1"), new Label("Step 1"));
-    stepper.addStep(new CustomHeader("Step 2"), new Label("Step 2"));
-    stepper.addStep(new CustomHeader("Step 3"), new Label("Step 3"));
+    stepper.addStep(new CustomHeader("Step 1"), new Span("Step 1"));
+    stepper.addStep(new CustomHeader("Step 2"), new Span("Step 2"));
+    stepper.addStep(new CustomHeader("Step 3"), new Span("Step 3"));
     stepper.addFinishListener(buttonClickEvent ->
         Notification.show("Finished", 1000, Notification.Position.MIDDLE));
     addCard("Advanced Usage", "Custom Headers", stepper);
@@ -359,11 +359,11 @@ public class View extends DemoView {
   private class CustomHeader extends StepHeader
       implements AbortStepListener, CompleteStepListener, EnterStepListener {
 
-    private Label state;
+    private Span state;
 
     public CustomHeader(String name) {
-      Label caption = new Label(name);
-      state = new Label("Inactive");
+      Span caption = new Span(name);
+      state = new Span("Inactive");
       addClassName("custom-header");
       add(caption, state);
     }
@@ -453,7 +453,7 @@ public class View extends DemoView {
 
   public class CustomStep extends Step {
 
-    private Label inputValue;
+    private Span inputValue;
     private TextField input;
     private boolean isValid;
 
@@ -464,8 +464,8 @@ public class View extends DemoView {
     }
 
     private Div createHeader(String title) {
-      Label headerTitle = new Label(title);
-      inputValue = new Label("-");
+      Span headerTitle = new Span(title);
+      inputValue = new Span("-");
       StepHeader header = new StepHeader(headerTitle, inputValue);
       header.addClassName("custom-header");
       return header;
