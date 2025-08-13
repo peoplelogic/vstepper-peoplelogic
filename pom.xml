@@ -6,7 +6,7 @@
 
 	<groupId>org.aksw.thirdparty.com.mlottmann.VStepper</groupId>
 	<artifactId>VStepper</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<name>VStepper</name>
 
 	<url>https://vaadin.com/directory/component/vstepper</url>
@@ -14,8 +14,8 @@
 		time.</description>
 
 	<properties>
-		<vaadin.version>24.4.4</vaadin.version>
-		<lombok.version>1.18.34</lombok.version>
+		<vaadin.version>24.8.5</vaadin.version>
+		<lombok.version>1.18.38</lombok.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -35,9 +35,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>https://github.com/Aklakan/VStepper</url>
-		<connection>scm:git:git://github.com/Aklakan/VStepper.git</connection>
-		<developerConnection>scm:git:git@github.com:Aklakan/VStepper.git</developerConnection>
+		<url>https://github.com/peoplelogic/vstepper-peoplelogic</url>
+		<connection>scm:git:git://github.com/peoplelogic/vstepper-peoplelogic.git</connection>
+		<developerConnection>scm:git:git@github.com:/peoplelogic/vstepper-peoplelogic.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 	<developers>
@@ -84,6 +84,10 @@
 			<id>Vaadin prereleases</id>
 			<url>https://maven.vaadin.com/vaadin-prereleases</url>
 		</repository>
+        <repository>
+            <id>Vaadin Releases</id>
+            <url>https://maven.vaadin.com/vaadin-releases</url>
+        </repository>
 	</repositories>
 
 	<pluginRepositories>
