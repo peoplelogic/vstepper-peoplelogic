@@ -234,6 +234,14 @@ public class VStepper extends LitTemplate implements HasSize, HasStyle {
     }
   }
 
+    public void setCurrentStep(int stepNumber) {
+        if (steps.size() < stepNumber) {
+            throw new IllegalArgumentException("Step number out of range.");
+        } else {
+            changeStep(steps.get(stepNumber - 1));
+        }
+    }
+
   public void enableHeaderNavigation(boolean enabled) {
 
   }
