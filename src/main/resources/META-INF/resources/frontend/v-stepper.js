@@ -1,11 +1,6 @@
-import { unsafeCSS } from "lit";
 import { html, LitElement, css } from "lit";
 
-import { ThemableMixin } from "@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js";
-import "@vaadin/vaadin-lumo-styles/color.js";
-import "@vaadin/vaadin-lumo-styles/spacing.js";
-
-class VStepper extends ThemableMixin(LitElement) {
+class VStepper extends LitElement {
   static styles = css`
   :host {
     display: flex;

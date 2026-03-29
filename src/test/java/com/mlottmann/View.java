@@ -16,7 +16,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
-import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -37,8 +37,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 @Route("demo")
-@CssImport(value = "./styles/stepper-test-styles.css", themeFor = "v-stepper")
-@CssImport(value = "./styles/textfield-test-styles.css", themeFor = "vaadin-text-field")
+@StyleSheet("./styles/stepper-test-styles.css")
+@StyleSheet("./styles/textfield-test-styles.css")
 public class View extends DemoView {
 
   @Override
